@@ -13,91 +13,123 @@
       href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body class="flex flex-col h-min-screen">
-    <header class="flex justify-center gap-2">
-      <h1 class="text-6xl text-center">Welcome to</h1>
-      <img src="./public/LOGO.jpg" alt="Holistic" />
-      <!-- <nav>
-        <ul class="flex gap-10 justify-center md:hidden">
-          <li>
-            <a
+  <body class="body w-full flex flex-col h-min-screen">
+    <header id="header" >
+      <div class="w-full flex justify-center gap-2">
+
+        <h1 class="text-6xl text-center">Welcome to</h1>
+        <img src="./public/LOGO.jpg" alt="Holistic" />
+      </div>
+      <div class="flex justify-center w-full">
+        <nav class="w-full m-5 text-white bg-gradient-to-r from-white via-green-500 to-white">
+          <ul class="flex gap-10 justify-center hidden sm:flex  p-2 w-full">
+            <li>
+              <a
               href="index.html"
-              class="nav-btn hover:text-green-500 duration-200"
+              class="nav-btn hover:text-green-800 duration-200"
               >Home</a
+              >
+            </li>
+          <li>
+            <a
+            href="#product-list"
+            class="nav-btn hover:text-green-800 duration-200"
+            >Products</a
             >
           </li>
           <li>
             <a
-              href="products.html"
-              class="nav-btn hover:text-green-500 duration-200"
-              >Products</a
-            >
-          </li>
-          <li>
-            <a
-              href="about.html"
-              class="nav-btn hover:text-green-500 duration-200"
+              href="#About_us"
+              class="nav-btn hover:text-green-800 duration-200"
               >About Us</a
             >
           </li>
           <li>
             <a
-              href="contact.html"
-              class="nav-btn hover:text-green-500 duration-200"
-              >Contact Us</a
+            href="#contact"
+            class="nav-btn hover:text-green-800 duration-200"
+            >Contact Us</a
             >
           </li>
         </ul>
-      </nav> -->
+      </nav>
+    </div>
     </header>
     <main>
       <section>
-        <div class="w-full bg-black h-[700px]">
-          <div>
-            <img src="./public/Pro_carbon_gr.jpg" />
-          </div>
+        <div id="crousel_section" class=" w-full bg-black md:h-[700px] ">
+          <div class="relative w-full ">
+            <!-- Navigation Buttons -->
+            <button id="prev" class="absolute  left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">
+              ❮
+          </button>
+          <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">
+              ❯
+          </button>
+            <!-- Carousel Container -->
+            <div class="carousel overflow-hidden relative rounded-lg shadow-lg">
+                <div class="flex transition-transform duration-700 ease-out" id="carousel">
+                    <!-- Slide 1 -->
+                    <div class="min-w-full">
+                        <img src="./public/crousel-1.jpg" class="w-full h-auto" alt="Slide 1">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="min-w-full">
+                        <img src="./public/crousel-2.jpg" class="w-full h-auto" alt="Slide 2">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="min-w-full">
+                        <img src="./public/crousel-3.jpg" class="w-full h-auto" alt="Slide 3">
+                    </div>
+                    <div class="min-w-full">
+                        <img src="./public/crousel-4.jpg" class="w-full h-auto" alt="Slide 3">
+                    </div>
+                    <div class="min-w-full">
+                        <img src="./public/crousel-5.jpg" class="w-full h-auto" alt="Slide 3">
+                    </div>
+                </div>
+            </div>
+    
+            
+        </div>
         </div>
       </section>
-      <section>
-        <div class="w-full h-fit flex justify-center border-2 border-black text-center mt-10 ">
-          <div class="w-1/2">
+      <section id="about-section ">
+        <div class="about-container text-center font-semibold  text-4xl border-2 border-black mt-10 p-1 bg-gradient-to-r from-green-300 to-green-700" >
+          <h1 class="section-title">About Us</h1>
+            
+            <div class="card-container"  id="About_us">
+                <div class="our_vision">
+                    <h2 class=".h1_about card-title">Our Vision</h2>
+                    <p class="p_about card-text">
+                        To establish our identity as a major global player in the specialty bio-products 
+                        & high-tech farming products. Bring new perspectives by diversifying into 
+                        related product lines.
+                    </p>
+                </div>
 
-            <h1 class="font-semibold text-5xl text-center">About Us</h1>
-            <div class="our_vision text-xl ">
-              <h1 class="text-2xl ">
-                Our Vision
-              </h1>
-              <p class="text-green-500">
-                
-                To established our identity As a major global player in the
-                speciality bio products & high technical farming products. Bring new
-                perspective by Diversifying into related Product lines.
-              </p>
+                <div class="our_mission">
+                    <h2 class=".h1_about card-title">Our Mission</h2>
+                    <p class="p_about card-text">
+                        To provide total farmers' satisfaction through on-time delivery of 
+                        high-quality bio-products & fertilizers, technical support & service 
+                        to enhance farm productivity, and to build a business with a human face.
+                    </p>
+                </div>
             </div>
-            <div class="our_mission text-xl ">
-              <h1 class="text-2xl ">
-                Our Mission
-              </h1>
-              <p class="text-green-500">
-                To provide total Farmers Satisfaction through on time Delivery of
-                high quality Bio Products & Fertilizers Technical support & Service
-                to enhance farm Productivity and to build a business with a human
-                face.
-              </p>
-            </div>
-            </div>
-          </section>
-      <h2 class="text-center text-5xl">Our Products</h2>
+        </div>
+    </section>
+      <h1 class="text-center text-5xl">Our Products</h1>
       <section id="product-list" class="p-5 w-full"></section>
       <section >
-        <div class="flex justify-center items-center bg-gradient-to-r from-green-300 to-green-700 p-6">
-          <div class=" shadow-lg rounded-lg p-8 w-full max-w-lg text-center border-2 border-gray-300">
-              <h1 class="text-3xl font-bold text-gray-800 mb-4">Get in Touch</h1>
-              <p class="text-gray-600 text-lg mb-6">We'd love to hear from you! Feel free to reach out.</p>
+        <div id="contact" class="contact-section flex justify-center items-center bg-gradient-to-r from-green-300 to-green-700 p-6">
+          <div class="contact-card shadow-lg rounded-lg p-8 w-full max-w-lg text-center border-2 border-gray-300">
+              <h1 class="contact-title text-3xl font-bold text-gray-800 mb-4">Get in Touch</h1>
+              <p class="contact-text text-gray-600 text-lg mb-6">We'd love to hear from you! Feel free to reach out.</p>
       
-              <div class="flex flex-col items-center space-y-4">
+              <div class="contact-text flex flex-col items-center space-y-4">
                   <div class="flex items-center space-x-3">
                       <span class="text-blue-500 text-2xl">📞</span>
                       <p class="text-xl font-semibold text-gray-700">54095</p>
@@ -112,7 +144,7 @@
               </div>
       
               <a href="mailto:dkfj@tjkgjd" 
-                 class="mt-6 inline-block bg-blue-600 text-white text-lg font-bold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+                 class="contact-email mt-6 inline-block bg-blue-600 text-white text-lg font-bold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
                   Send Us an Email
               </a>
           </div>
@@ -121,7 +153,7 @@
       </section>
     </main>
     <footer class="border-t-2 border-black text-center">
-      <div class="font-bold text-3xl">HOLISTIC AGROCHEM</div>
+      <div class="brand font-bold text-3xl">HOLISTIC AGROCHEM</div>
       <div>
         78, Industrial Area, Bhadru, PO Kanjian, Teh. Bhoranj, District
         Hamirpur, (H.P.) 177025. 

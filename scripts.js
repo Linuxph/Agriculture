@@ -148,16 +148,18 @@ const productContainer = document.getElementById("product-list");
 const productHTML = products
   .map(
     (product,index) => `
-    <div class="m-2 w-full bg-white shadow-md rounded-lg p-4 border-black border-2 flex justify-around gap-5 items-center ${index % 2 === 0 ? '' : 'flex-row-reverse'}">
+    <div class="product-card m-2 w-full bg-white shadow-md rounded-lg p-4 border-black border-2 flex justify-around gap-5 items-center ${index % 2 === 0 ? '' : 'flex-row-reverse'}">
     <div class="text-white text-center flex flex-col items-center w-[25vw] h-[500px] ">
-    <img src="${product.image}" alt="${product.name}" 
-      class="w-[150px] h-[200px] object-cover mx-auto mb-4 rounded-lg border-2 border-red-500" >
+      <div class="w-[350px] h-[500px] overflow-hidden rounded-lg border-2 border-red-500 mx-auto">
+        <img src="${product.image}" alt="${product.name}" 
+          class="" >
+      </div>
         
         <h2 class="text-2xl font-bold font-[Hind]">${product.name}</h2>
     </div>
     <div class="flex-1">
         <p class="text-red-600 font-bold text-2xl">${product.title}</p>
-        <div class="mt-2 border-2 border-blue-500 text-black px-4 py-2 rounded-md">
+        <div class="product-description mt-2 border-2 border-blue-500 text-black px-4 py-2 rounded-md">
             ${product.description}
         </div>
     </div>
@@ -169,3 +171,26 @@ const productHTML = products
 
 productContainer.innerHTML = productHTML;
 
+
+//slider
+const carousel = document.getElementById("carousel");
+const slides = document.querySelectorAll("#carousel div");
+let index = 0;
+
+function showSlide(i) {
+    index = (i + slides.length) % slides.length;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+    showSlide(index + 1);
+}
+
+function prevSlide() {
+    showSlide(index - 1);
+}
+
+document.getElementById("next").addEventListener("click", nextSlide);
+document.getElementById("prev").addEventListener("click", prevSlide);
+
+setInterval(nextSlide, 3000);
