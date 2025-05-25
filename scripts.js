@@ -225,14 +225,14 @@ const productHTML = products
     <p class="product-name-again">${product.name}</p>
 
     <!-- Descriptions -->
-    <div class="english-description product-description">
+    <div class="english-description product-description hidden">
       ${product.Engdescription}
     </div>
-    <div class="hindi-description product-description hidden">
+    <div class="hindi-description product-description ">
       ${product.description}
     </div>
 
-    <button class="language-toggle">Translate</button>
+    <button class="language-toggle">English</button>
   </div>
 </div>
 
@@ -261,12 +261,6 @@ function nextSlide() {
   showSlide(index + 1);
 }
 
-function prevSlide() {
-  showSlide(index - 1);
-}
-
-document.getElementById("next").addEventListener("click", nextSlide);
-document.getElementById("prev").addEventListener("click", prevSlide);
 
 setInterval(nextSlide, 3000);
 
@@ -275,23 +269,17 @@ const carousel2 = document.getElementById("carousel2");
 const slides2 = document.querySelectorAll("#carousel2 div");
 let index2 = 0;
 
-function showSlide(i) {
+function showSlide2(i) {
   index2 = (i + slides2.length) % slides2.length;
   carousel2.style.transform = `translateX(-${index2 * 100}%)`;
 }
 
-function nextSlide() {
-  showSlide(index2 + 1);
+function nextSlide2() {
+  showSlide2(index2 + 1);
 }
 
-function prevSlide() {
-  showSlide(index2 - 1);
-}
 
-document.getElementById("next").addEventListener("click", nextSlide);
-document.getElementById("prev").addEventListener("click", prevSlide);
-
-setInterval(nextSlide, 3000);
+setInterval(nextSlide2, 3000);
 
 
 //toggle
@@ -301,14 +289,16 @@ document.querySelectorAll(".language-toggle").forEach((toggleButton) => {
     const productDiv = toggleButton.closest(".product-card");
     const englishDesc = productDiv.querySelector(".english-description");
     const hindiDesc = productDiv.querySelector(".hindi-description");
-
+    
     // Toggle visibility
     const isEnglishVisible = !englishDesc.classList.contains("hidden");
-
+    
     if (isEnglishVisible) {
+      toggleButton.textContent = "English";
       englishDesc.classList.add("hidden");
       hindiDesc.classList.remove("hidden");
     } else {
+      toggleButton.textContent = "Hindi";
       englishDesc.classList.remove("hidden");
       hindiDesc.classList.add("hidden");
     }
